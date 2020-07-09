@@ -20,30 +20,42 @@
 
 var tiroUtente = 0;
 var tiroPc= 0;
-var risultato= "parita";
+var risultato;
 
+tiroUtente = Math.floor(Math.random()*6)+1;
+document.getElementById("risultato-utente").innerHTML="il tuo dado ha realizzato " + tiroUtente;
 
-function miolancio() {
-    tiroUtente= Math.floor(Math.random()*6)+1;
-    document.getElementById("risultato-utente").innerHTML=tiroUtente;
-
-}
-
-
-
-function lanciocpu() {
-    tiroPc= parseInt(Math.floor(Math.random()*6)+1);
-    document.getElementById("risultato-cpu").innerHTML=tiroPc;
-}
+tiroPc= Math.floor(Math.random()*6)+1;
+document.getElementById("risultato-cpu").innerHTML="il dado del pc ha realizzato " + tiroPc;
 
 if (tiroUtente > tiroPc) {
-    risultato="hai vinto";
-} else {
+    risultato="HAI VINTO";
+} else if (tiroUtente<tiroPc) {
     risultato="RITENTA SARAI PIU FORTUNATO";
+} else {
+    risultato= "PARITA\'";
 }
 
 document.getElementById("chi-ha-vinto").innerHTML=risultato;
 
-console.log(tiroUtente);
-console.log(tiroPc);
-console.log(risultato);
+
+
+// function miolancio(tiroUtente) {
+//     tiroUtente = Math.floor(Math.random()*6)+1;
+//     document.getElementById("risultato-utente").innerHTML=miolancio(tiroUtente);
+//     return tiroUtente;
+// }
+// console.log(tiroUtente);
+//
+// function lanciocpu() {
+//     tiroPc= Math.floor(Math.random()*6)+1;
+//     document.getElementById("risultato-cpu").innerHTML=tiroPc;
+// }
+//
+// if (tiroUtente > tiroPc) {
+//     risultato="hai vinto";
+// } else if (tiroUtente<tiroPc) {
+//     risultato="RITENTA SARAI PIU FORTUNATO";
+// } else {
+//     risultato= "parita";
+// }
